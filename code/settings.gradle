@@ -3,7 +3,7 @@ rootProject.name = 'demo-cloud'
 
 //include 'auth-service'
 include 'dataflow-service'
-//include 'reservation-client'
+include 'reservation-client'
 include 'reservation-service'
 //include 'hystrix-dashboard'
 //include 'zipkin-service'
