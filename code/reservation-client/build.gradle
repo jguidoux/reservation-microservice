@@ -5,13 +5,13 @@ dependencies {
     compile('org.springframework.cloud:spring-cloud-starter-eureka')
     compile('org.springframework.cloud:spring-cloud-starter-feign')
     compile('org.springframework.boot:spring-boot-starter-data-rest')
-//    compile('>org.springframework.cloud:spring-cloud-starter-hystrix')
+    compile('org.springframework.cloud:spring-cloud-starter-hystrix')
 //    compile('org.springframework.cloud:spring-cloud-starter-oauth2')
     compile('org.springframework.cloud:spring-cloud-starter-zuul')
     compile('org.springframework.boot:spring-boot-starter-web')
 //    compile('org.springframework.cloud:spring-cloud-starter-zipkin')
     compile('org.springframework.boot:spring-boot-starter-integration')
-//    compile('org.springframework.cloud:spring-cloud-starter-stream-rabbit')
+    compile('org.springframework.cloud:spring-cloud-starter-stream-rabbit')
 
 
     testCompile('org.springframework.cloud:spring-cloud-starter-contract-stub-runner')
