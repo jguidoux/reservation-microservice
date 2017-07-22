@@ -1,11 +1,11 @@
 rootProject.name = 'demo-cloud'
 
 
-include 'auth-service'
+//include 'auth-service'
 include 'dataflow-service'
-include 'reservation-client'
+//include 'reservation-client'
 include 'reservation-service'
-include 'hystrix-dashboard'
-include 'zipkin-service'
+//include 'hystrix-dashboard'
+//include 'zipkin-service'
 include 'config-service'
 include 'eureka-service'
