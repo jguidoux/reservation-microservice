@@ -9,7 +9,7 @@ dependencies {
 //    compile('org.springframework.cloud:spring-cloud-starter-oauth2')
     compile('org.springframework.cloud:spring-cloud-starter-zuul')
     compile('org.springframework.boot:spring-boot-starter-web')
-//    compile('org.springframework.cloud:spring-cloud-starter-zipkin')
+    compile('org.springframework.cloud:spring-cloud-starter-zipkin')
     compile('org.springframework.boot:spring-boot-starter-integration')
     compile('org.springframework.cloud:spring-cloud-starter-stream-rabbit')
 

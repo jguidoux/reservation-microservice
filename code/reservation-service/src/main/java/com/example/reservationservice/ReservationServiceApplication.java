@@ -114,7 +114,7 @@ class MessageRestController {
     @GetMapping("/message")
     String message() {
         return this.value;
-    }   
+    }
 }
 
 //@Component
