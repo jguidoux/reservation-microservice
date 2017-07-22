@@ -7,13 +7,17 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.data.domain.Pageable;
+import org.springframework.hateoas.PagedResources;
 import org.springframework.hateoas.Resources;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 //@EnableResourceServer
@@ -73,11 +77,12 @@ class ReservationApiAdapterRestController {
 //
 //    @HystrixCommand(fallbackMethod = "fallback")
     @GetMapping("/names")
-    public Collection<String> names() {
-        return reservationReader.read()
+    public Collection<String> names(Pageable pageable) {
+        return reservationReader.read(pageable.getPageNumber(), pageable.getPageSize())
                 .getContent()
                 .stream()
                 .map(Reservation::getReservationName)
+                .filter(Objects::nonNull)
                 .collect(Collectors.toList());
     }
 }
@@ -87,7 +92,7 @@ class ReservationApiAdapterRestController {
 interface ReservationReader {
 
     @GetMapping("/reservations")
-    Resources<Reservation> read();
+    PagedResources<Reservation> read(@RequestParam("page") int page, @RequestParam("size") int size);
 
 }
 
