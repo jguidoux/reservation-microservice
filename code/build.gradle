@@ -12,9 +12,18 @@ buildscript {
 
 
 group = 'org.test'
-version = '0.0.1-SNAPSHOT'
-
 description = """"""
+
+
+allprojects {
+	version = '0.0.1-SNAPSHOT'
+
+
+	task wrapper(type: Wrapper) {
+    gradleVersion = '4.0.1'
+		}
+}
+
 
 
 
@@ -43,5 +52,11 @@ subprojects {
 			}
 		}
 
+		dependencies {
+
+
+
+		    testCompile('org.springframework.boot:spring-boot-starter-test')
+		}
 
 }
