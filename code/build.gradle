@@ -65,7 +65,7 @@ subprojects {
     }
 
 
-    task buildDocker(type: Docker) {
+    task buildDocker(type: Docker, dependsOn: build) {
         baseImage = 'frolvlad/alpine-oraclejdk8:slim'
         push = project.hasProperty('push')
         volume  '/tmp'

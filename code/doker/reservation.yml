@@ -1,0 +1,14 @@
+version: '2'
+services:
+    config-app:
+        image: demo-cloud/config-service:0.0.1-SNAPSHOT
+        ports:
+            - 8888:8888
+    eureka-app:
+        image: demo-cloud/eureka-service:0.0.1-SNAPSHOT
+        ports:
+            - 8761:8761
+#    reservation-service-app:
+#        image: demo-cloud/reservation-service:0.0.1-SNAPSHOT
+#        ports:
+#            - 8000:8000
